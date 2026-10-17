@@ -1,0 +1,12 @@
+TamoTank extracts the Fishwi aquarium from BirdMachine/Keywi.
+Source branch: Keywi-Fishwi
+Source commit: f272b928001850c4181c773d767e1a7038965316
+Source file: app/src/main/java/com/dessalines/thumbkey/fishwi/FishwiAquarium.kt
+Source icon: app/src/main/res/drawable/fishwi_icon.xml
+https://github.com/BirdMachine/Keywi/tree/f272b928001850c4181c773d767e1a7038965316
+
+Keywi is derived from Thumb-Key by dessalines and contributors.
+Aquarium work and standalone adaptation: BirdMachine and contributors.
+Distributed under the GNU Affero General Public License version 3 or later.
+See LICENSE. This is a standalone derivative, not a keyboard distribution.
+The original Fishwi branch remains intact; its app-private saves are not imported.
