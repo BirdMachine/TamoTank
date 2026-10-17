@@ -26,6 +26,7 @@ import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import kotlinx.coroutines.delay
@@ -217,11 +218,11 @@ fun TamoTankAquarium(modifier: Modifier = Modifier) {
         }
     }
 
-    LaunchedEffect(Unit) {
+    LaunchedEffect(lifecycle) {
+        lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
         var ticks = 0
         while (true) {
             delay(40)
-            if (!running) continue
             val dt = .04f
             val now = System.currentTimeMillis()
             shimmer = (shimmer + dt * .18f) % 1f
@@ -301,6 +302,8 @@ fun TamoTankAquarium(modifier: Modifier = Modifier) {
             ticks++
             if (ticks % 250 == 0) TamoTankStore.save(context, fish, interactions)
         }
+    }
+
     }
 
     DisposableEffect(lifecycle) {
